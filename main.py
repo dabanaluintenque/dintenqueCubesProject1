@@ -36,5 +36,9 @@ def print_wufoo_data():
 
 
 if __name__ == '__main__':
-
-    print_wufoo_data()
+    with open('data.txt', 'a') as f:
+        values = get_wufoo_data()
+        for key, val in values.items():
+            for item in val:
+                f.write('\n')
+                f.write(str(item))
