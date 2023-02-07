@@ -18,7 +18,7 @@ def get_wufoo_data() -> dict:
         sys.exit(-1)
 
     json_response = response.json()
-
+    # add comment to test workflow
     # json response will be either a dictionary or a list of dictionaries each dictionary represents a json object
     return json_response
 
