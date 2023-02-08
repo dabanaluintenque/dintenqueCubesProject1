@@ -21,7 +21,7 @@ def close_database(connection: sqlite3.Connection):
 
 def create_database_table(cursor: sqlite3.Cursor):
     cursor.execute('''CREATE TABLE IF NOT EXISTS cubesProposal(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id INTEGER PRIMARY KEY,
     prefix TEXT NOT NULL,
     first_name TEXT NOT NULL,
     last_name TEXT NOT NULL,
@@ -34,20 +34,22 @@ def create_database_table(cursor: sqlite3.Cursor):
 
 
 def insert_into_cube_table(cursor: sqlite3.Cursor):
-    cursor.execute(f'''INSERT INTO cubesProposal(
-            prefix, first_name, last_name, title,
-            organization_name, organization_website,
-            email, phone_number)
-        VALUES("Dr", "Dabana", "Jorge", "CEO",
-            "Atlantic Global", "Atlanticglobal.com", "jorge@atlantic.com",
-            "508 333 0000")''')
-    cursor.execute(f'''INSERT INTO cubesProposal(
-                prefix, first_name, last_name, title,
-                organization_name, organization_website,
-                email, phone_number)
-            VALUES("Dr", "Jhon", "Santore", "Professor",
-                "BSU", "wwwbridgew.edu", "jsantore@bridgew.edu",
-                "508-531-1000")''')
+    records = [(1, "Dr", "Dabana",
+                "Jorge", "CEO",
+                "Atlantic Global",
+                "Atlanticglobal.com",
+                "jorge@atlantic.com",
+                "508-333-0000"),
+
+               (2, "Dr", "Jhon",
+                "Santore",
+                "Professor",
+                "BSU",
+                "wwwbridgew.edu",
+                "jsantore@bridgew.edu",
+                "508-531-1000")
+               ]
+    cursor.executemany('INSERT INTO cubesProposal VALUES(?,?,?,?,?,?,?,?,?);', records)
 
 
 def getDatabase():
