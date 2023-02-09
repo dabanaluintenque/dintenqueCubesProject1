@@ -1,1 +1,2 @@
-.gitignore/secrets.py
+
+/secrets.py
