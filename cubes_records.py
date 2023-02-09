@@ -1,4 +1,4 @@
-
+# author: Dabana Intenque
 database_records = [(1, "Dr", "Dabana",
                      "Jorge", "CEO",
                      "Atlantic Global",

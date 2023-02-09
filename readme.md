@@ -17,7 +17,7 @@ Everything is working fine.
 Sprint 2 update:
  This is the continuation of the sprint 1
 for this sprint I added a database.py, and cubes_records.py files 
-to create and a new database and update the previous entries in sprint 1.
+to create a new database and update the previous entries in sprint 1.
 Also, I updated my continuous Integration/devOps on GitHub in order to run the tests
 Added my secret key value in action under the * Secrets and variables in 
 gitHub
@@ -39,6 +39,7 @@ Database Name: Cube_database
   organization_website:
   email:
   phone:
-  
 
-everything is working fine except for the second test function. 
+I wrote two tests for this sprint and both passed.
+Thank you!
+everything is working fine as except. 

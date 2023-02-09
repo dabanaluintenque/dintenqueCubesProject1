@@ -1,3 +1,4 @@
+# author: Dabana Intenque
 import main
 import database
 import pytest
@@ -10,12 +11,9 @@ def test_data_from_web():
 
 
 def test_new_database():
-    con, cursor = database.open_database("create_new_empty_database")
+    con, cursor = database.open_database("cubes_database.db")
     database.create_database_table(cursor)
-    result = database.insert_into_cube_table(cursor)
-    assert result is None
-
-
-
-
-
+    select = cursor.execute("SELECT * from cubesProposal")
+    database.create_database_table(cursor)
+    my_record = cursor.fetchall()
+    assert my_record == []
