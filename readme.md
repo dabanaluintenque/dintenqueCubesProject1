@@ -19,4 +19,26 @@ Sprint 2 update:
 for this sprint I added a database.py, and cubes_records.py files 
 to create and a new database and update the previous entries in sprint 1.
 Also, I updated my continuous Integration/devOps on GitHub in order to run the tests
+Added my secret key value in action under the * Secrets and variables in 
+gitHub
+
+Here is my Database layout:
+my cube database contains 9 fields for user to enter a data
+ 
+Database Name: Cube_database
+  
+ Table Name: cubesProposal
+
+  Entries are:
+  id:
+  prefix:
+  first_name:
+  last_name:
+  title:
+  organization_name:
+  organization_website:
+  email:
+  phone:
+  
+
 everything is working fine except for the second test function. 
