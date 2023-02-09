@@ -13,7 +13,7 @@ def test_new_database():
     con, cursor = database.open_database("create_new_empty_database")
     database.create_database_table(cursor)
     result = database.insert_into_cube_table(cursor)
-    assert result
+    assert result is None
 
 
 

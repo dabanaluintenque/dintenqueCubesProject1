@@ -35,24 +35,25 @@ def create_database_table(cursor: sqlite3.Cursor):
     );''')
 
 
-def check_if_value_exist(cursor: sqlite3.Cursor):
-    select = cursor.execute("SELECT id from cubesProposal")
-    my_record = cursor.fetchall()
-    for row in my_record:
-        print("id", row[0])
-        if row[0] == row[0]:
-            print("primary key exists already")
-            sys.exit(-1)
-        insert_into_cube_table(cursor)
-
-
 def insert_into_cube_table(cursor: sqlite3.Cursor):
     cursor.executemany('INSERT INTO cubesProposal VALUES(?,?,?,?,?,?,?,?,?);', database_records)
+
+
+def check_if_value_exist(cursor: sqlite3.Cursor):
+    select = cursor.execute("SELECT * from cubesProposal")
+    my_record = cursor.fetchall()
+    print("Is the table empty?", my_record == [])
+    if not my_record:
+        insert_into_cube_table(cursor)
+    for entry in my_record:
+        print("primary key exists already")
+        print(entry)
+    # sys.exit(-1)
 
 
 def getDatabase():
     conn, cursor = open_database("cubes_database.db")
     create_database_table(cursor)
     check_if_value_exist(cursor)
-    insert_into_cube_table(cursor)
+    # insert_into_cube_table(cursor)
     close_database(conn)
