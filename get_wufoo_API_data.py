@@ -24,6 +24,5 @@ def get_wufoo_data() -> dict:
 
     # json response will be either a dictionary or a list
 
-    # add comment to test workflow
     # json response will be either a dictionary or a list of dictionaries each dictionary represents a json object
     return json_response

@@ -3,6 +3,7 @@
 
 # Database
 from database import getDatabase
+# API Data
 from get_wufoo_API_data import get_wufoo_data
 
 
@@ -12,6 +13,7 @@ def get_wufoo_entries(data_entries: list, file_save=None):
             print(f"{key}: {value}", file=file_save)
             print("\n_____________________________",
                   file=file_save)
+
 
 def main():
     # return the data from the get_wufoo_data function

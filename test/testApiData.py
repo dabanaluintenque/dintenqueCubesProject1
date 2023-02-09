@@ -1,4 +1,4 @@
-# author: Dabana Intenque
+# author: Dabana
 import get_wufoo_API_data
 import database
 import pytest
