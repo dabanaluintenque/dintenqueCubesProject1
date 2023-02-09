@@ -1,5 +1,7 @@
 import sqlite3
+import sys
 from typing import Tuple
+from cubes_records import database_records
 
 
 # Opening the Database
@@ -33,29 +35,24 @@ def create_database_table(cursor: sqlite3.Cursor):
     );''')
 
 
-def insert_into_cube_table(cursor: sqlite3.Cursor):
-    records = [(1, "Dr", "Dabana",
-                "Jorge", "CEO",
-                "Atlantic Global",
-                "Atlanticglobal.com",
-                "jorge@atlantic.com",
-                "508-333-0000"),
+def check_if_value_exist(cursor: sqlite3.Cursor):
+    select = cursor.execute("SELECT id from cubesProposal")
+    my_record = cursor.fetchall()
+    for row in my_record:
+        print("id", row[0])
+        if row[0] == row[0]:
+            print("primary key exists already")
+            sys.exit(-1)
+        insert_into_cube_table(cursor)
 
-               (2, "Dr", "Jhon",
-                "Santore",
-                "Professor",
-                "BSU",
-                "wwwbridgew.edu",
-                "jsantore@bridgew.edu",
-                "508-531-1000")
-               ]
-    cursor.executemany('INSERT INTO cubesProposal VALUES(?,?,?,?,?,?,?,?,?);', records)
+
+def insert_into_cube_table(cursor: sqlite3.Cursor):
+    cursor.executemany('INSERT INTO cubesProposal VALUES(?,?,?,?,?,?,?,?,?);', database_records)
 
 
 def getDatabase():
-    conn, cursor = open_database("Cubes_Database.sqlite")
-    print(type(conn))
-    print(type(cursor))
+    conn, cursor = open_database("cubes_database.db")
     create_database_table(cursor)
+    check_if_value_exist(cursor)
     insert_into_cube_table(cursor)
     close_database(conn)

@@ -36,7 +36,7 @@ def get_wufoo_entries(data_entries: list, file_save=None):
     for entry in data_entries:
         for key, value in entry.items():
             print(f"{key}: {value}", file=file_save)
-            print("***********************\n_____________________________",
+            print("\n_____________________________",
                   file=file_save)
 
 

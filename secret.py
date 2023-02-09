@@ -1,2 +1,3 @@
 # Author: Dabana Intenque
-wufooKey = "GOM4-9E6Z-T0SQ-U664";
+
+wufooKey = "594X-M06Q-2BRJ-154O"
