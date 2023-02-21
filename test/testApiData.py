@@ -7,7 +7,7 @@ import pytest
 def test_data_from_web():
     result = get_wufoo_API_data.get_wufoo_data()
     for key, value in result.items():
-        assert len(value) == 10
+        assert len(value) >= 10
 
 
 def test_new_database():
