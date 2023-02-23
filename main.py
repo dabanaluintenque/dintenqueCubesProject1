@@ -1,9 +1,5 @@
 # author: Dabana Intenque
-
-
-# Database
-from database import getDatabase
-# API Data
+import database
 from get_wufoo_API_data import get_wufoo_data
 
 
@@ -27,4 +23,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-    getDatabase()
+    database.getData()
