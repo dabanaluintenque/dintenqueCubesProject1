@@ -1,5 +1,6 @@
 # author: Dabana Intenque
 import database
+import Cubes_GUI
 from get_wufoo_API_data import get_wufoo_data
 
 
@@ -24,3 +25,4 @@ def main():
 if __name__ == '__main__':
     main()
     database.getData()
+    Cubes_GUI.main()
