@@ -43,3 +43,26 @@ Database Name: Cube_database
 I wrote two tests for this sprint and both passed.
 Thank you!
 everything is working fine as except. 
+
+
+Sprint 3 Update:
+
+ Directions to Run:
+ You can run this sprint from two files 
+     1- from Cubes_GUI.py (which I recommend)
+     2- From main.py
+ This sprint is the continuation of the sprint one and two
+ the objective of this sprint is to create a GUI that displays the entries 
+ from my database.
+ 
+  First, I created a list of entry where the user can choose from to display 
+  the information stored on that entry
+  
+  Second I made the values on the text field read only mode
+  
+  Third I wrote two tests
+    One checks if the text fields contain a value
+    and the checkbox is checked or uncheck.
+    Second, check if there is a data in the cubesProposal table
+
+  

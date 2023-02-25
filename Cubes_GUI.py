@@ -31,6 +31,7 @@ Label(window, text="cubes data info",
       font=("arial", 30, "bold"), fg="black").pack()
 
 # connect to sql
+
 con = sq.connect('cubes_database.db')
 cursor = con.cursor()
 
