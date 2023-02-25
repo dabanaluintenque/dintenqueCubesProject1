@@ -215,6 +215,7 @@ def selected_items(event):
                   for j in select_value])
 
     if select_list_items == 'CEO':
+        make_entry_enable()
         clear_entry()
         first_entry()
         make_entry_disable()
