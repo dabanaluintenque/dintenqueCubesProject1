@@ -11,7 +11,7 @@ window = Tk()
 window.title("Cubes Data")
 
 # window
-window.geometry('1000x700+100+100')
+window.geometry('1000x900+100+100')
 
 # list to select from
 list_items = ('CEO', 'President', 'Dean', 'Department Manager')
@@ -19,10 +19,13 @@ variables = tk.Variable(value=list_items)
 
 listbox = tk.Listbox(
     window,
+    font=("arial", 20),
     listvariable=variables,
     height=4,
     selectmode=SINGLE
 )
+
+listbox.place(x=600, y=100)
 
 Label(window, text="cubes data info",
       font=("arial", 30, "bold"), fg="black").pack()
@@ -42,6 +45,7 @@ def display_data() -> list[dict]:
     return list_of_entries
 
 
+# Labels
 Label(window, text="Prefix:", font=("arial", 17)).place(x=10, y=150)
 Label(window, text="First Name:", font=("arial", 17)).place(x=10, y=200)
 Label(window, text="Last Name:", font=("arial", 17)).place(x=10, y=250)
@@ -51,6 +55,7 @@ Label(window, text="organization Website", font=("arial", 17)).place(x=10, y=400
 Label(window, text="Email:", font=("arial", 17)).place(x=10, y=450)
 Label(window, text="Phone Number:", font=("arial", 17)).place(x=10, y=500)
 
+# text fields
 prefix_box = Entry(window)
 prefix_box.place(x=220, y=150)
 
@@ -74,6 +79,25 @@ email_box.place(x=220, y=450)
 
 phone_number_box = Entry(window)
 phone_number_box.place(x=220, y=500)
+
+# checkboxes
+Course_Project_check_box = Checkbutton(window, text='Course Project')
+Course_Project_check_box.place(x=250, y=600)
+
+checked = tk.StringVar()
+Guest_Speaker_check_box = Checkbutton(window, text="Guest Speaker", variable=checked, onvalue="yes", offvalue="No")
+checked.set('yes')
+
+Guest_Speaker_check_box.place(x=250, y=650)
+
+Site_Visit_check_box = Checkbutton(window, text="Site Visit")
+Site_Visit_check_box.place(x=250, y=700)
+
+Job_Shadow_check_box = Checkbutton(window, text="Job Shadow")
+Job_Shadow_check_box.place(x=250, y=750)
+
+Internships_check_box = Checkbutton(window, text="Internship")
+Internships_check_box.place(x=250, y=800)
 
 
 # list from sql
@@ -176,6 +200,7 @@ def selected_items(event):
         second_entry()
 
     elif select_list_items == 'Dean':
+        Internships_check_box.getboolean(TRUE)
         clear_entry()
         third_entry()
 
@@ -190,9 +215,8 @@ def selected_items(event):
 def main():
     first_entry()
     listbox.bind('<<ListboxSelect>>', selected_items)
-    listbox.place()
-    listbox.pack()
-
+    # listbox.place()
+    # listbox.pack()
     window.mainloop()
 
 
