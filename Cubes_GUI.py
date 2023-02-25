@@ -35,6 +35,28 @@ con = sq.connect('cubes_database.db')
 cursor = con.cursor()
 
 
+def make_entry_disable():
+    prefix_box.config(state="disabled")
+    first_name_box.config(state="disabled")
+    last_name_box.config(state="disabled")
+    title_box.config(state="disabled")
+    organization_name_box.config(state="disabled")
+    organization_website_box.config(state="disabled")
+    email_box.config(state="disabled")
+    phone_number_box.config(state="disabled")
+
+
+def make_entry_enable():
+    prefix_box.config(state="normal")
+    first_name_box.config(state="normal")
+    last_name_box.config(state="normal")
+    title_box.config(state="normal")
+    organization_name_box.config(state="normal")
+    organization_website_box.config(state="normal")
+    email_box.config(state="normal")
+    phone_number_box.config(state="normal")
+
+
 def display_data() -> list[dict]:
     cursor.execute('SELECT * FROM cubesProposal')
     rows = cursor.fetchall()
@@ -194,19 +216,26 @@ def selected_items(event):
     if select_list_items == 'CEO':
         clear_entry()
         first_entry()
+        make_entry_disable()
 
     elif select_list_items == 'President':
+        make_entry_enable()
         clear_entry()
         second_entry()
+        make_entry_disable()
 
     elif select_list_items == 'Dean':
-        Internships_check_box.getboolean(TRUE)
+
+        make_entry_enable()
         clear_entry()
         third_entry()
+        make_entry_disable()
 
     else:
+        make_entry_enable()
         clear_entry()
         fort_entry()
+        make_entry_disable()
 
     message = f'Click ok to know who is the: {select_list_items}'
     showinfo('0', message=message, command=select_list_items)
@@ -214,9 +243,8 @@ def selected_items(event):
 
 def main():
     first_entry()
+    make_entry_disable()
     listbox.bind('<<ListboxSelect>>', selected_items)
-    # listbox.place()
-    # listbox.pack()
     window.mainloop()
 
 
