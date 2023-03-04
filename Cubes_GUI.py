@@ -11,7 +11,7 @@ window = Tk()
 window.title("Cubes Data")
 
 # window
-window.geometry('1000x900+100+100')
+window.geometry('700x800+100+100')
 
 # list to select from
 list_items = ('CEO', 'President', 'Dean', 'Department Manager')
@@ -25,7 +25,7 @@ listbox = tk.Listbox(
     selectmode=SINGLE
 )
 
-listbox.place(x=600, y=100)
+listbox.place(x=500, y=100)
 
 Label(window, text="cubes data info",
       font=("arial", 30, "bold"), fg="black").pack()
