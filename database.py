@@ -1,23 +1,9 @@
 # author: Dabana Intenque
 import sqlite3
-import sys
 from typing import Tuple
-
-from PySide6 import QtWidgets
-
 import get_wufoo_API_data
-from cubes_records import database_records
-# author: Dabana Intenque
-import sys
-
-from PySide6.QtGui import QCloseEvent
-from PySide6.QtWidgets import QApplication, QWidget, QPushButton, QMessageBox, QTableWidget
-from buttons import close_window_button
 
 
-# Bringing all the widgets and vents needed to build the application from pyside6 Library
-
-# Opening the Database
 def open_database(name: str) -> Tuple[sqlite3.Connection, sqlite3.Cursor]:
     # connect to existing DB or create new one
     database_connection = sqlite3.connect(name)

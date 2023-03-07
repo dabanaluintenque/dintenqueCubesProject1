@@ -1,11 +1,7 @@
 # author: Dabana Inteqque
 import sys
-
-import cursor
 import requests
-# importing the Api wufoo_key from secrets.py file
 from secrets import wufooKey
-# importing the HTTPBasicAuth from the requests.auth package
 from requests.auth import HTTPBasicAuth
 
 
