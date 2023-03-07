@@ -1,7 +1,9 @@
 # author: Dabana Intenque
 import sqlite3
 
-from tkinter.ttk import Entry
+from tkinter.ttk import Entry, Button
+
+import Labels_folder
 
 con = sqlite3.connect('cubes_database.db')
 cursor = con.cursor()
@@ -148,3 +150,15 @@ def clear_entry():
     text_field_list[5].delete(0, 'end')
     text_field_list[6].delete(0, 'end')
     text_field_list[7].delete(0, 'end')
+
+
+def update_database():
+    text_fields()
+    Labels_folder.all_labels()
+
+    update_btn = Button(text='Update your Data')
+    update_btn.place(x=100, y=600)
+
+    clear_data_btn = Button(text="Clear the Data         ", command=clear_entry)
+    clear_data_btn.place(x=300, y=600)
+

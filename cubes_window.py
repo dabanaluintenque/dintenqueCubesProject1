@@ -12,7 +12,7 @@ class cubes_main_window(Frame):
         super().__init__(master)
         # self.pack()
 
-        self.geo = '900x780+500+100'
+        self.geo = '1300x850+300+100'
         self.title = "Cubes Project 1"
 
         self.list_items = ('CEO', 'President', 'Dean', 'Department Manager')
@@ -67,9 +67,15 @@ def selected_items(events):
 def runWindow():
     main_window.geometry(app.geo)
     main_window.title(app.title)
+
     app.listbox_entries.bind('<<ListboxSelect>>', selected_items)
-    update_btn = Button(text='Click to visualize Data', command=Show_Views)
-    update_btn.place(x=10, y=10)
+
+    visualize_btn = Button(text='Click to visualize Data', command=Show_Views)
+    visualize_btn.place(x=10, y=10)
+
+    update_btn = Button(text='Click to update Data in Database', command=backend_functions.update_database)
+    update_btn.place(x=10, y=90)
+
     app.mainloop()
     app.destroy()
 
