@@ -31,4 +31,3 @@ def list_checkbox() -> list[tk]:
     list_of_values = []
 
     return list_of_values
-

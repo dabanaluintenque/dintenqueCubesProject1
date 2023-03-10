@@ -11,5 +11,6 @@ def all_labels():
     Label(text="organization Website", font=("arial", 17)).place(x=10, y=400)
     Label(text="Email:", font=("arial", 17)).place(x=10, y=450)
     Label(text="Phone Number:", font=("arial", 17)).place(x=10, y=500)
+
     # Label(text="cubes data info",
     #      font=("arial", 30, "bold"), fg="black").pack()

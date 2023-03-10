@@ -137,7 +137,6 @@ def fourth_entry():
 # clear the entry
 def clear_entry():
     text_field_entry = text_fields()
-    print(text_field_entry[0])
     text_field_list = []
     for entry in text_field_entry:
         text_field_list.append(entry)
@@ -156,9 +155,15 @@ def update_database():
     text_fields()
     Labels_folder.all_labels()
 
+    sql = '''UPDATE cubesProposal 
+             SET first_name = ?,
+             prefix = ?,
+             last_name = ?
+             WHERE entry_id = ?'''
+
     update_btn = Button(text='Update your Data')
     update_btn.place(x=100, y=600)
 
-    clear_data_btn = Button(text="Clear the Data         ", command=clear_entry)
+    clear_data_btn = Button(text="Clear the Data", command=clear_entry)
     clear_data_btn.place(x=300, y=600)
-
+    cursor.execute(sql)
